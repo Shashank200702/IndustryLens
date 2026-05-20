@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./Classifier.css";
 
-const API = "http://localhost:8000";
+const API = "https://shashankmugali-industrylens-api.hf.space";
 
 const INDUSTRY_NAMES = {
   "10110010": "Agricultural Inputs",
