@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: industrylens-api
+    runtime: python
+    rootDir: gecs_platform/gecs_platform
+    buildCommand: pip install -r requirements.txt
+    startCommand: python startup.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
