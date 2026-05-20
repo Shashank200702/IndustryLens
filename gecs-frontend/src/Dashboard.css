@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap');
+
+.dash {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 24px 60px;
+}
+
+.dash-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(99,202,183,0.08);
+  border: 1px solid rgba(99,202,183,0.2);
+  border-radius: 8px;
+  color: #63cab7;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: rgba(99,202,183,0.15);
+  border-color: #63cab7;
+}
+
+.dash-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.dash-title-icon {
+  color: #63cab7;
+  filter: drop-shadow(0 0 8px #63cab7);
+}
+
+.dash-subtitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: #6b7a99;
+  letter-spacing: 0.05em;
+}
+
+/* ── Stat pills ── */
+.stat-pills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.stat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(99,202,183,0.06);
+  border: 1px solid rgba(99,202,183,0.15);
+  border-radius: 12px;
+  padding: 14px 20px;
+  min-width: 120px;
+}
+
+.sp-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+.sp-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #6b7a99;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* ── Grid ── */
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.span2 { grid-column: span 2; }
+
+@media (max-width: 768px) {
+  .dash-grid { grid-template-columns: 1fr; }
+  .span2 { grid-column: span 1; }
+}
+
+/* ── Cards ── */
+.dash-card {
+  background: rgba(10,15,30,0.7);
+  border: 1px solid rgba(99,202,183,0.12);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.dash-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99,202,183,0.4), transparent);
+}
+
+.dc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dc-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+}
+
+.dc-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #63cab7;
+  background: rgba(99,202,183,0.1);
+  border: 1px solid rgba(99,202,183,0.2);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+/* ── Horizontal bars ── */
+.hbar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.hbar-list::-webkit-scrollbar { width: 3px; }
+.hbar-list::-webkit-scrollbar-track { background: transparent; }
+.hbar-list::-webkit-scrollbar-thumb { background: rgba(99,202,183,0.3); border-radius: 99px; }
+
+.hbar-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 60px;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .hbar-row { grid-template-columns: 120px 1fr 50px; }
+}
+
+.hbar-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hbar-track {
+  height: 6px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.hbar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 4px;
+}
+
+.hbar-val {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: white;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── Donut ── */
+.donut-wrap {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.donut-svg {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 140px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.donut-legend::-webkit-scrollbar { width: 3px; }
+.donut-legend::-webkit-scrollbar-thumb { background: rgba(99,202,183,0.3); border-radius: 99px; }
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #94a3b8;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.legend-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: white;
+  white-space: nowrap;
+}
+
+/* ── Gauges ── */
+.gauges-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.gauge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.gauge-svg { width: 140px; }
+
+.gauge-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #6b7a99;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.model-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ms-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #6b7a99;
+}
+
+.ms-row span:last-child { color: white; }
+
+/* ── Live Feed ── */
+.live-dot-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #63cab7;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #63cab7;
+  box-shadow: 0 0 8px #63cab7;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.feed-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  gap: 8px;
+}
+
+.feed-empty-icon {
+  font-size: 32px;
+  color: rgba(99,202,183,0.3);
+  margin-bottom: 8px;
+}
+
+.feed-empty-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7a99;
+}
+
+.feed-empty-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #4a5568;
+  line-height: 1.6;
+  max-width: 240px;
+}
+
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.feed-list::-webkit-scrollbar { width: 3px; }
+.feed-list::-webkit-scrollbar-thumb { background: rgba(99,202,183,0.3); border-radius: 99px; }
+
+.feed-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.feed-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.feed-info { flex: 1; min-width: 0; }
+
+.feed-industry {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feed-preview {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #6b7a99;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feed-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.feed-conf {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.feed-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: #4a5568;
+}
+
+/* ── Light theme overrides ── */
+.dash { background: #fef9f0; }
+.donut-svg text { fill: #1c1008 !important; }

@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #fef9f0;
+  color: #1c1008;
+  min-height: 100vh;
+}
+
+.app-root { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ── NAV ── */
+.app-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 60px;
+  background: rgba(254,249,240,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #e7d9c0;
+}
+
+.app-nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1c1008;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.app-nav-logo:hover { color: #92400e; }
+
+.app-nav-icon {
+  color: #92400e;
+  font-size: 20px;
+}
+
+.app-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.app-nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #78716c;
+  background: none;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.app-nav-link:hover { color: #1c1008; background: #f5ede0; }
+.app-nav-link.active { color: #92400e; background: #fff7ed; }
+
+.app-nav-cta {
+  background: #1c1008;
+  color: #fef3c7;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.app-nav-cta:hover {
+  background: #92400e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(146,64,14,0.25);
+}
+
+/* ── PAGE ── */
+.app-page {
+  padding-top: 60px;
+  flex: 1;
+}
+
+/* ── Dashboard override for light theme ── */
+.dash {
+  background: #fef9f0;
+  min-height: 100vh;
+}
+
+.dash-header { color: #1c1008; }
+
+.dash-title { color: #1c1008 !important; font-family: 'Playfair Display', serif !important; }
+.dash-title-icon { color: #92400e !important; filter: none !important; }
+.dash-subtitle { color: #78716c !important; }
+
+.back-btn {
+  background: #fff7ed !important;
+  border-color: #e7d9c0 !important;
+  color: #92400e !important;
+}
+
+.stat-pill {
+  background: white !important;
+  border-color: #e7d9c0 !important;
+}
+
+.sp-val { color: #1c1008 !important; }
+.sp-label { color: #78716c !important; }
+
+.dash-card {
+  background: white !important;
+  border-color: #e7d9c0 !important;
+  box-shadow: 0 2px 12px rgba(28,16,8,0.05) !important;
+}
+
+.dash-card::before {
+  background: linear-gradient(90deg, transparent, rgba(146,64,14,0.3), transparent) !important;
+}
+
+.dc-title { color: #1c1008 !important; font-family: 'Playfair Display', serif !important; }
+.dc-badge { color: #92400e !important; background: #fff7ed !important; border-color: #e7d9c0 !important; }
+
+.hbar-label { color: #78716c !important; }
+.hbar-track { background: #f5ede0 !important; }
+.hbar-val { color: #1c1008 !important; }
+
+.legend-name { color: #78716c !important; }
+.legend-count { color: #1c1008 !important; }
+
+.ms-row { color: #78716c !important; border-color: #f5ede0 !important; }
+.ms-row span:last-child { color: #1c1008 !important; }
+
+.gauge-label { color: #78716c !important; }
+
+.feed-empty-text { color: #78716c !important; }
+.feed-empty-sub { color: #a8a29e !important; }
+.feed-empty-icon { color: #e7d9c0 !important; }
+
+.feed-item {
+  background: #fef9f0 !important;
+  border-color: #e7d9c0 !important;
+}
+
+.feed-industry { color: #1c1008 !important; font-family: 'DM Sans', sans-serif !important; }
+.feed-preview { color: #a8a29e !important; }
+.feed-time { color: #c4b5a0 !important; }
+
+.live-dot { background: #92400e !important; box-shadow: 0 0 8px #92400e !important; }
+.live-dot-wrap { color: #92400e !important; }
+
+.rc-rank { color: #a8a29e !important; }
+.rc-row-name { color: #1c1008 !important; }
+.rc-row-code { color: #a8a29e !important; }
+.rc-pct { color: #78716c !important; }
+.rc-bar-track { background: #f5ede0 !important; }
