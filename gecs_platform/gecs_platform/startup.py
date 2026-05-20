@@ -8,11 +8,16 @@ import sys
 import subprocess
 from pathlib import Path
 
+# On Render, repo root is at /opt/render/project/src/
+REPO_ROOT = Path(__file__).parent.parent.parent
 MODELS = Path(__file__).parent / "models"
 MODELS.mkdir(exist_ok=True)
 
-TASK1_CSV = Path(__file__).parent.parent / "task1_gecs_classification_final.csv"
-TASK2_CSV = Path(__file__).parent.parent / "task2_subindustry_classification_final.csv"
+TASK1_CSV = REPO_ROOT / "task1_gecs_classification_final.csv"
+TASK2_CSV = REPO_ROOT / "task2_subindustry_classification_final.csv"
+
+print(f"Looking for CSVs at: {TASK1_CSV}")
+print(f"CSV exists: {TASK1_CSV.exists()}")
 
 def models_exist():
     needed = ["tfidf1.joblib", "lr1.joblib", "le1.joblib",
